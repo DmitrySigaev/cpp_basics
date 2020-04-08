@@ -3,18 +3,20 @@
 class A
 {
 public:
-	virtual const char* getName1(int x) { return "A"; }
-	virtual const char* getName2(int x) { return "A"; }
-	virtual const char* getName3(int x) { return "A"; }
+	virtual const char* getName() { return "A"; }
 };
 
 class B : public A
 {
 public:
-	virtual const char* getName1(short int x) override { return "B"; } // ошибка компил€ции, метод не €вл€етс€ переопределением
-	virtual const char* getName2(int x) const override { return "B"; } // ошибка компил€ции, метод не €вл€етс€ переопределением
-	virtual const char* getName3(int x) override { return "B"; } // всЄ хорошо, метод €вл€етс€ переопределением A::getName3(int)
+	// «аметили final в конце? Ёто означает, что метод переопределить уже нельз€
+	virtual const char* getName() override final { return "B"; } // всЄ хорошо, переопределение A::getName()
+};
 
+class C : public B
+{
+public:
+	virtual const char* getName() override { return "C"; } // ошибка компил€ции: переопределение метода B::getName(), который €вл€етс€ final
 };
 
 int main()
