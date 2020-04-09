@@ -1,24 +1,31 @@
 #include <iostream>
 
-class A
+class Parent
 {
 public:
-	virtual const char* getName() { return "A"; }
+	// Ётот метод getThis() возвращает указатель на класс Parent
+	virtual Parent* getThis() { std::cout << "called Parent::getThis()\n"; return this; }
+	void printType() { std::cout << "returned a Parent\n"; }
 };
 
-class B final : public A // обратите внимание на модификатор final здесь
+class Child : public Parent
 {
 public:
-	virtual const char* getName() override { return "B"; }
-};
-
-class C : public B // ошибка компил€ции: нельз€ наследовать класс final
-{
-public:
-	virtual const char* getName() override { return "C"; }
+	// ќбычно, типы возврата переопределений и виртуальных функций родительского класса должны совпадать
+	// ќднако, поскольку Child наследует класс Parent, то следующий метод может возвращать Child* вместо Parent*
+	virtual Child* getThis() { std::cout << "called Child::getThis()\n";  return this; }
+	void printType() { std::cout << "returned a Child\n"; }
 };
 
 int main()
 {
-	return 0;
+	Child ch;
+	Parent* p = &ch;
+	ch.getThis()->printType(); // вызываетс€ Child::getThis(), возвращаетс€ Child*, вызываетс€ Child::printType
+	p->getThis()->printType(); // вызываетс€ Child::getThis(), возвращаетс€ Parent*, вызываетс€ Parent::printType
+	auto apthis = p->getThis();
+	apthis->printType();
+	((Child *)apthis)->printType();
+	p->printType();
+
 }
