@@ -1,5 +1,20 @@
 #include <iostream>
 
+struct Empty {};
+struct EmptyVirt { virtual ~EmptyVirt() {} };
+struct NotEmpty { int m_i; };
+struct NotEmptyVirt
+{
+    virtual ~NotEmptyVirt() {}
+    int m_i;
+};
+struct NotEmptyNonVirt
+{
+    void foo() const {}
+    int m_i;
+};
+
+
 class Parent
 {
 public:
@@ -28,4 +43,9 @@ int main()
 	((Child *)apthis)->printType();
 	p->printType();
 
+    std::cout << sizeof(Empty) << std::endl;
+    std::cout << sizeof(EmptyVirt) << std::endl;
+    std::cout << sizeof(NotEmpty) << std::endl;
+    std::cout << sizeof(NotEmptyVirt) << std::endl;
+    std::cout << sizeof(NotEmptyNonVirt) << std::endl;
 }
