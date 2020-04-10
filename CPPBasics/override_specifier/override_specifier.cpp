@@ -5,7 +5,7 @@ class Parent
 public:
 	// Этот метод getThis() возвращает указатель на класс Parent
 	virtual Parent* getThis() { std::cout << "called Parent::getThis()\n"; return this; }
-	void printType() { std::cout << "returned a Parent\n"; }
+	virtual void printType() { std::cout << "returned a Parent\n"; }
 };
 
 class Child : public Parent
