@@ -1,4 +1,5 @@
 #include <iostream>
+//#pragma pack(1)
 
 struct Empty {};
 struct EmptyVirt { virtual ~EmptyVirt() {} };
