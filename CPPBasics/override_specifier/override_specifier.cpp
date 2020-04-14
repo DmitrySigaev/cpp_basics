@@ -33,8 +33,22 @@ public:
 	void printType() { std::cout << "returned a Child\n"; }
 };
 
+class A {
+public:
+    A() { std::cout << "A()" << std::endl; }
+    ~A() { std::cout << "~A()" << std::endl; }
+};
+
+class B : public A {
+public:
+    B() { std::cout << "B()" << std::endl; }
+    ~B() { std::cout << "~B()" << std::endl; }
+};
+
+
 int main()
 {
+    B b;
 	Child ch;
 	Parent* p = &ch;
 	ch.getThis()->printType(); // גûחûגאועסÿ Child::getThis(), גמחגנאשאועסÿ Child*, גûחûגאועסÿ Child::printType
@@ -49,4 +63,7 @@ int main()
     std::cout << sizeof(NotEmpty) << std::endl;
     std::cout << sizeof(NotEmptyVirt) << std::endl;
     std::cout << sizeof(NotEmptyNonVirt) << std::endl;
+    A* pA = new B;
+    delete pA;
+    return EXIT_SUCCESS;
 }
