@@ -1,4 +1,16 @@
 #include <iostream>
+#include <iostream>
+#include <string>
+#include <iterator>
+#include <functional>
+#include <algorithm>
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <string>
+#include <functional>
+
+
 #pragma pack(1)
 
 struct Empty {};
@@ -46,6 +58,10 @@ public:
 };
 
 
+struct Size {
+    int width, height;
+};
+
 int main()
 {
     B b;
@@ -65,5 +81,118 @@ int main()
     std::cout << sizeof(NotEmptyNonVirt) << std::endl;
     A* pA = new B;
     delete pA;
+
+    std::string A = "Privet! Kak, dela?.,,A?", B;
+    std::copy_if(A.begin(), A.end(), std::inserter(B, B.begin()), std::not_fn(std::ref(ispunct)));
+    std::cout << "Result: " << B << std::endl;
+
+    std::string s1 = "Privet! Kak, dela?.,,A?", s2;
+    std::remove_copy_if(s1.begin(), s1.end(), std::back_inserter(s2), ispunct);
+    std::cout << "Result: " << s2 << std::endl;
+
+    copy_if(A.begin(), A.end(), back_inserter(B), [](char a) {return (!ispunct(a)); });
+
+    std::vector<int> v{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+    int sum = std::accumulate(v.begin(), v.end(), 0);
+
+    int product = std::accumulate(v.begin(), v.end(), 1, std::multiplies<int>());
+
+    auto dash_fold = [](std::string a, int b) {
+        return std::move(a) + '-' + std::to_string(b);
+    };
+
+    std::string s = std::accumulate(std::next(v.begin()), v.end(),
+        std::to_string(v[0]), // start with first element
+        dash_fold);
+
+    // Right fold using reverse iterators
+    std::string rs = std::accumulate(std::next(v.rbegin()), v.rend(),
+        std::to_string(v.back()), // start with last element
+        dash_fold);
+
+    std::cout << "sum: " << sum << '\n'
+        << "product: " << product << '\n'
+        << "dash-separated string: " << s << '\n'
+        << "dash-separated string (right-folded): " << rs << '\n';
+
+
+    std::vector<std::pair<int, double>> v2{ std::make_pair(1, 1.0), std::make_pair(2,2.0), std::make_pair(3, 3.0), std::make_pair(4,4.0), std::make_pair(5, 5.0), std::make_pair(6, 6.0), std::make_pair(7,7.0), std::make_pair(8, 8.0), std::make_pair(9, 9.0), std::make_pair(10,10.0) };
+   // std::vector<std::pair<int, double>> v2{ std::make_pair(1, 1.0), std::make_pair(1,1.0), std::make_pair(2, 2.3), std::make_pair(1,1.0), std::make_pair(1, 1.0), std::make_pair(1, 1.0), std::make_pair(1,1.0), std::make_pair(1, 1.0), std::make_pair(1, 1.0), std::make_pair(1,1.0) };
+    std::vector<std::tuple<int, double>> v3{ std::make_tuple(1, 1.0), std::make_tuple(2,2.0), std::make_tuple(3, 3.0), std::make_tuple(4,4.0), std::make_tuple(5, 5.0), std::make_tuple(6, 6.0), std::make_tuple(7,7.0), std::make_tuple(8, 8.0), std::make_tuple(9, 9.0), std::make_tuple(10,10.0) };
+
+    std::vector<double> vd2;
+    std::cout << "vd2 size: " << vd2.size() << '\n';
+    std::transform(v2.begin(), v2.end(), std::back_inserter(vd2), [](const std::pair<int, double>& p) -> double { return p.second; });
+
+
+    std::vector<double> vd3;
+    std::cout << "vd3 size: " << vd3.size() << '\n';
+    std::transform(v3.begin(), v3.end(), std::back_inserter(vd3), [](const std::tuple<int, double>& p) -> double { return std::get<1>(p); });
+    std::vector<std::tuple<int, double>> usedPoints;
+    std::copy(v3.begin() + 3, v3.end(), std::back_inserter(usedPoints));
+
+    auto sum_d = std::accumulate(vd2.begin(), vd2.end(), 0.0);
+    if (vd2.size()) sum_d /= vd2.size();
+    std::cout << "vd2 size2: " << vd2.size() << '\n';
+    std::cout << "sum: " << sum_d << '\n';
+    auto minel = std::min_element(vd2.begin(), vd2.end());
+    std::cout << "min: " << *minel << '\n';
+    std::vector<double> maxd;
+    std::copy_if(vd2.begin(), vd2.end(), back_inserter(maxd), [sum_d](const double a) {return a < 2 * sum_d; });
+    auto pointsMinLastsTwo = *std::min_element(vd2.end()-2, vd2.end());
+    std::vector<double> pointsFirstTwo = { *vd2.begin(),  *(vd2.begin() + 1) };
+
+    /*
+    std::vector<int> v;
+    std::transform(test_vector.begin(), test_vector.end(), std::back_inserter(v),
+        [&v](const std::pair<int, int>& p)
+        { v.push_back(p.first);
+    return p.second; });
+*/
+ //   std::cout << "Result: " << s2 << std::endl;
+ //   auto sum2 = std::accumulate(v2.begin(), v2.end(), std::make_pair(0, 0.0));
+
+ //   auto product2 = std::accumulate(v.begin(), v.end(), std::make_pair(1,1.0), std::multiplies<std::pair<int,double>>());
+/*
+    auto dash_fold2 = [](std::string a, int b) {
+        return std::move(a) + '-' + std::to_string(b);
+    };
+
+    std::string su2 = std::accumulate(std::next(v.begin()), v.end(),
+        std::to_string(v[0]), // start with first element
+        dash_fold2);
+
+    // Right fold using reverse iterators
+    std::string r2s = std::accumulate(std::next(v.rbegin()), v.rend(),
+        std::to_string(v.back()), // start with last element
+        dash_fold2);
+*/
+ //   std::cout << "sum: " << product2.first << '\n';
+    /*
+    std::cout << "sum: " << sum2 << '\n'
+        << "product: " << product2 << '\n'
+        << "dash-separated string: " << su2 << '\n'
+        << "dash-separated string (right-folded): " << r2s << '\n';
+        */
+
+
+
+    std::vector<Size> sizes = { {4, 1}, {2, 3}, {1, 2} };
+
+    decltype(sizes)::iterator minEl, maxEl;
+    std::tie(minEl, maxEl) = std::minmax_element(begin(sizes), end(sizes),
+        [](Size const& s1, Size const& s2)
+        {
+            return s1.width < s2.width;
+        });
+
+    std::cout << "Minimum (based on width): "
+        << minEl->width << "," << minEl->height << std::endl;
+
+    std::cout << "Maximum (based on width): "
+        << maxEl->width << "," << maxEl->height << std::endl;
     return EXIT_SUCCESS;
 }
+
+
