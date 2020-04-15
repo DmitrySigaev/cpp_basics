@@ -10,6 +10,11 @@
 #include <string>
 #include <functional>
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <gsl/gsl_errno.h>
+#include <gsl/gsl_spline.h>
 
 #pragma pack(1)
 
@@ -61,6 +66,110 @@ public:
 struct Size {
     int width, height;
 };
+
+
+class Spline;
+class SplineImpl;
+
+
+/***** Spline factory functions *****/
+
+/* Linear interpolation */
+Spline LinearSpline(const std::vector<double>& X, const std::vector<double>& Y);
+Spline LinearSpline(int N, const double* X, const double* Y);
+
+/* Shifted linear interpolation (see Blu, Thevenaz, and Unser, 2004) */
+Spline ShiftedLinearSpline(const std::vector<double>& X, const std::vector<double>& Y, double tau = 0.2);
+Spline ShiftedLinearSpline(int N, const double* X, const double* Y, double tau = 0.2);
+
+/* Natural cubic spline */
+Spline CubicSpline(const std::vector<double>& X, const std::vector<double>& Y);
+Spline CubicSpline(int N, const double* X, const double* Y);
+
+
+/***************************************************************
+ * Spline
+ *
+ * Generic spline wrapper class.
+ ***************************************************************/
+class Spline {
+public:
+    /* Default to cubic spline */
+    Spline(const std::vector<double>& X, const std::vector<double>& Y);
+    Spline(int N, const double* X, const double* Y);
+
+    Spline();
+    Spline(SplineImpl* impl, bool clone = false);
+    Spline(const Spline& F);
+    ~Spline();
+
+    Spline& operator=(const Spline& F);
+
+    double Evaluate(double x) const;
+    double EvaluateDerivative(double x) const;
+
+    double operator()(double x) const { return Evaluate(x); }
+
+    /* Find a local maximum or minimum of the interpolated function */
+//    double FindMaximum(double xguess, double* ymax = 0);
+//    double FindMinimum(double xguess, double& ymin = 0);
+
+protected:
+    SplineImpl* impl;   // internal spline implementation
+};
+
+
+/**************************************************
+ * SplineImpl
+ *
+ * Base class for internal spline implementations.
+ **************************************************/
+struct SplineImpl {
+    SplineImpl() {}
+    virtual ~SplineImpl() {}
+
+    virtual double y(double x) const = 0;
+    virtual double dydx(double x) const = 0;
+    virtual SplineImpl* clone() const = 0;
+
+    double xmin, xmax;    // domain
+};
+
+
+int intrpolation(void)
+{
+    int i;
+    double xi, yi, x[10], y[10];
+
+    printf("#m=0,S=17\n");
+
+    for (i = 0; i < 10; i++)
+    {
+        x[i] = i + 0.5 * sin(i);
+        y[i] = i + cos(i * i);
+        printf("%f %f\n", x[i], y[i]);
+    }
+
+    printf("#m=1,S=0\n");
+
+    {
+        gsl_interp_accel* acc
+            = gsl_interp_accel_alloc();
+        gsl_spline* spline
+            = gsl_spline_alloc(gsl_interp_linear, 10);
+
+        gsl_spline_init(spline, x, y, 10);
+
+        for (xi = x[0]; xi < x[9]; xi += 0.01)
+        {
+            yi = gsl_spline_eval(spline, xi, acc);
+            printf("%f %f\n", xi, yi);
+        }
+        gsl_spline_free(spline);
+        gsl_interp_accel_free(acc);
+    }
+    return 0;
+}
 
 int main()
 {
@@ -192,6 +301,9 @@ int main()
 
     std::cout << "Maximum (based on width): "
         << maxEl->width << "," << maxEl->height << std::endl;
+
+
+    intrpolation();
     return EXIT_SUCCESS;
 }
 
