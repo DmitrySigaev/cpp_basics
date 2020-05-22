@@ -28,7 +28,7 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: './SQLiteTest'
-    cmakeArgs: '--build -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake'
+    cmakeArgs: '--build . -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake'
 
 - script: |
     dir .
