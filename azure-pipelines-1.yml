@@ -28,13 +28,13 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: './SQLiteTest'
-    cmakeArgs: '-DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake'
+    cmakeArgs: '--build -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake'
 
 - script: |
     dir .
     cd ./SQLiteTest
     dir .
-    cmake --build .
+    #cmake --build .
     dir .
 
   displayName: 'See output'
