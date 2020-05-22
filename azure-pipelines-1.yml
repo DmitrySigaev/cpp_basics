@@ -24,3 +24,9 @@ steps:
   inputs:
     workingDirectory: './SQLiteTest'
     cmakeArgs: '-DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake'
+
+- script: |
+    dir .
+    cd ./SQLiteTest
+    dir .
+  displayName: 'See output'
