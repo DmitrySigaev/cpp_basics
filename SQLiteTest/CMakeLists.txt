@@ -55,5 +55,5 @@ add_executable(main main.cpp)
 
 if (SQLITE3_FOUND)
   include_directories(${SQLITE3_INCLUDE_DIR})
-  target_link_libraries (main sqlite3)
+  target_link_libraries (main ${SQLITE3_LIBRARY})
 endif (SQLITE3_FOUND)         
