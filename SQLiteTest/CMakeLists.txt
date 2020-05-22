@@ -7,11 +7,12 @@ if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
 message("CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}")
 endif()
 
+
 project(test)
 message("VCPKG_TARGET_TRIPLET=${VCPKG_TARGET_TRIPLET}")
 
 message("find_package SQLITE3")
-find_package(Sqlite3 REQUIRED)
+find_package(sqlite3)
 message("SQLITE3_FOUND=${SQLITE3_FOUND}")
 message("SQLITE3_INCLUDE_DIRS=${SQLITE3_INCLUDE_DIRS}")
 message("SQLITE3_LIBRARIES=${SQLITE3_LIBRARIES}")
@@ -54,5 +55,5 @@ add_executable(main main.cpp)
 
 if (SQLITE3_FOUND)
   include_directories(${SQLITE3_INCLUDE_DIR})
-  target_link_libraries (main sqlite3)
+  target_link_libraries (main ${SQLITE3_LIBRARY})
 endif (SQLITE3_FOUND)         
