@@ -1,10 +1,18 @@
 # CMakeLists.txt
 cmake_minimum_required(VERSION 3.0)
+
+if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+  set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+      CACHE STRING "")
+endif()
+message("VCPKG_TARGET_TRIPLET=${CMAKE_TOOLCHAIN_FILE}")
+
+
 project(test)
 message("VCPKG_TARGET_TRIPLET=${VCPKG_TARGET_TRIPLET}")
 
 message("find_package SQLITE3")
-find_package(Sqlite3 REQUIRED)
+#find_package(Sqlite3 REQUIRED)
 message("SQLITE3_FOUND=${SQLITE3_FOUND}")
 message("SQLITE3_INCLUDE_DIRS=${SQLITE3_INCLUDE_DIRS}")
 message("SQLITE3_LIBRARIES=${SQLITE3_LIBRARIES}")
