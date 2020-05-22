@@ -25,7 +25,7 @@ steps:
     cmake ./SQLiteTest .
     cd ./SQLiteTest
     dir .
-    cmake --build 
+    cmake --build .
   displayName: 'Run a multi-line script'
 
 # Environment variables are not preserved between steps.
