@@ -35,7 +35,7 @@ steps:
     cd ./SQLiteTest
     dir .
     cmake --build .
-    dir .
-    run ./Debug/main.exe
+    dir .\Debug
+    .\Debug\main.exe
 
   displayName: 'See output'
