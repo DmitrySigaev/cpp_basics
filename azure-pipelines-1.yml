@@ -33,7 +33,7 @@ steps:
     ls
     cmake --build .
     ls
-    make build
+    make
     .main 
 
   displayName: 'See output'
