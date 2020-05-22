@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(test)
 message("VCPKG_TARGET_TRIPLET=${VCPKG_TARGET_TRIPLET}")
 
-
+message("find_package SQLITE3")
 find_package(Sqlite3 REQUIRED)
 message("SQLITE3_FOUND=${SQLITE3_FOUND}")
 message("SQLITE3_INCLUDE_DIRS=${SQLITE3_INCLUDE_DIRS}")
@@ -14,11 +14,13 @@ message("SQLITE3_LIBRARY=${SQLITE3_LIBRARY}")
 
 
 # Look for the header file.
+message("Look for the header file SQLITE3.h")
+
 FIND_PATH(SQLITE3_INCLUDE_DIR NAMES sqlite3.h)
 
 # Look for the library.
 FIND_LIBRARY(SQLITE3_LIBRARY NAMES sqlite3)
-
+          
 message("SQLITE3_FOUND=${SQLITE3_FOUND}")
 message("SQLITE3_INCLUDE_DIR=${SQLITE3_INCLUDE_DIR}")
 message("SQLITE3_LIBRARY=${SQLITE3_LIBRARY}")
@@ -41,8 +43,9 @@ message("SQLITE3_FOUND=${SQLITE3_FOUND}")
 message("SQLITE3_INCLUDE_DIR=${SQLITE3_INCLUDE_DIR}")
 message("SQLITE3_LIBRARY=${SQLITE3_LIBRARY}")
 
+add_executable(main main.cpp)
 
 if (SQLITE3_FOUND)
   include_directories(${SQLITE3_INCLUDE_DIR})
   target_link_libraries (main sqlite3)
-endif (SQLITE3_FOUND)
+endif (SQLITE3_FOUND)         
