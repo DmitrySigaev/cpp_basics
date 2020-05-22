@@ -22,13 +22,14 @@ steps:
     dir .
     vcpkg install sqlite3 
     vcpkg list
-    echo $(SQLITE3_INCLUDE_DIRS)
+    cmake ./SQLiteTest .
   displayName: 'Run a multi-line script'
 
-- task: CMake@1
-  inputs:
-    workingDirectory: './SQLiteTest'
-    cmakeArgs: .
+# Environment variables are not preserved between steps.
+#- task: CMake@1
+ # inputs:
+ #   workingDirectory: './SQLiteTest'
+ #   cmakeArgs: .
 
 - script: |
     dir .
