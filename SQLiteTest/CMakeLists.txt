@@ -12,7 +12,7 @@ project(test)
 message("VCPKG_TARGET_TRIPLET=${VCPKG_TARGET_TRIPLET}")
 
 message("find_package SQLITE3")
-#find_package(Sqlite3 REQUIRED)
+find_package(sqlite3)
 message("SQLITE3_FOUND=${SQLITE3_FOUND}")
 message("SQLITE3_INCLUDE_DIRS=${SQLITE3_INCLUDE_DIRS}")
 message("SQLITE3_LIBRARIES=${SQLITE3_LIBRARIES}")
