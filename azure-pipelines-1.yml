@@ -29,4 +29,7 @@ steps:
     dir .
     cd ./SQLiteTest
     dir .
+    cmake --build .
+    dir .
+
   displayName: 'See output'
