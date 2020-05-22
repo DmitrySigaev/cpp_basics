@@ -36,5 +36,6 @@ steps:
     dir .
     cmake --build .
     dir .
+    ./Debug/main.exe
 
   displayName: 'See output'
