@@ -24,7 +24,7 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: './SQLiteTest'
-    cmakeArgs: '-DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -Wno-dev'
+    cmakeArgs: '-DCMAKE_TOOLCHAIN_FILE=/usr/local/share/vcpkg/scripts/buildsystems/vcpkg.cmake -Wno-dev'
 
 - script: |
     ls
