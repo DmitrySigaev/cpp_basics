@@ -34,6 +34,6 @@ steps:
     cmake --build .
     ls
     make
-    .main 
+    ./main 
 
   displayName: 'See output'
