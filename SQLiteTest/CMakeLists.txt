@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(test)
 message("VCPKG_TARGET_TRIPLET=${VCPKG_TARGET_TRIPLET}")
 
-find_package (SQLite3 CONFIG REQUIRED)
+find_package (SQLite3 REQUIRED)
 if (SQLITE3_FOUND)
   include_directories(${SQLITE3_INCLUDE_DIRS})
   target_link_libraries (tutorial ${SQLITE3_LIBRARIES})
