@@ -15,7 +15,10 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
+    echo check vckge script dir.
+    set VCPKG_ROOT=C:/vcpkg
+    dir C:\vcpkg\scripts\buildsystems\
+    echo Check cur dir.
     dir .
     vcpkg install sqlite3 
     vcpkg list
