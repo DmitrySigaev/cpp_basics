@@ -15,7 +15,8 @@ steps:
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
-    ls 
+    ls
+    vcpkg install sqlite3 
   displayName: 'Run a multi-line script'
 
 - task: CMake@1
