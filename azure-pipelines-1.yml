@@ -20,19 +20,15 @@ steps:
     dir C:\vcpkg\scripts\buildsystems\
     echo Check cur dir.
     dir .
-    vcpkg install sqlite3 
+    vcpkg install sqlite3:x64-windows
     vcpkg list
-    cmake ./SQLiteTest .
-    cd ./SQLiteTest
-    dir .
-    cmake --build .
   displayName: 'Run a multi-line script'
 
 # Environment variables are not preserved between steps.
-#- task: CMake@1
- # inputs:
- #   workingDirectory: './SQLiteTest'
- #   cmakeArgs: .
+- task: CMake@1
+  inputs:
+    workingDirectory: './SQLiteTest'
+    cmakeArgs: '-DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake'
 
 - script: |
     dir .
