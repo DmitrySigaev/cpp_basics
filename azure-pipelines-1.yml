@@ -7,7 +7,8 @@ trigger:
 - cmake-lx
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
+#  vmImage: 'ubuntu-latest'
 
 steps:
 - script: echo Hello, world!
@@ -15,7 +16,7 @@ steps:
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
-    ls
+    dir .
     vcpkg install sqlite3 
   displayName: 'Run a multi-line script'
 
