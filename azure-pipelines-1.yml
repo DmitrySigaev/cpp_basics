@@ -23,6 +23,9 @@ steps:
     vcpkg install sqlite3 
     vcpkg list
     cmake ./SQLiteTest .
+    cd ./SQLiteTest
+    dir .
+    cmake --build 
   displayName: 'Run a multi-line script'
 
 # Environment variables are not preserved between steps.
