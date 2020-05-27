@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  webapplication1:
+    image: webapplication1
+    build:
+      context: .
+      dockerfile: WebApplication1/Dockerfile
+
+  webapplication1-tests:
+    image: webapplication1-tests
+    build:
+      context: .
+      dockerfile: WebApplication1/Dockerfile      
+      target: test
+    volumes: 
+      - ${BUILD_ARTIFACTSTAGINGDIRECTORY:-./tests-results/}:/tests
