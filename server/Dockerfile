@@ -12,7 +12,8 @@ RUN apt-get update && \
                     ca-certificates python cmake 
 
 RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
-RUN cd /opt/vcpkg && bootstrap-vcpkg.sh
+RUN cd /opt/vcpkg && ls .
+RUN cd /opt/vcpkg && ./bootstrap-vcpkg.sh
 
 RUN vcpkg install boost-python:x64-linux
 RUN vcpkg install gsl:x64-linux
