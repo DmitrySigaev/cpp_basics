@@ -9,7 +9,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends zip unzip git \
-                    ca-certificates python cmake 
+                    ca-certificates python cmake curl tar
+
 
 RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
 RUN cd /opt/vcpkg && ls .
