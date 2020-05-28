@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends zip unzip git build-essential \
-                    ca-certificates python cmake curl tar software-properties-common
+                    ca-certificates python3 cmake curl tar software-properties-common
 
 
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y  && \
@@ -21,6 +21,7 @@ RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
 RUN cd /opt/vcpkg && ls .
 RUN cd /opt/vcpkg && ./bootstrap-vcpkg.sh
 
+RUN cd /opt/vcpkg && ./vcpkg install python3:x64-linux
 RUN cd /opt/vcpkg && ./vcpkg install boost-python:x64-linux
 RUN cd /opt/vcpkg && ./vcpkg install gsl:x64-linux
 RUN cd /opt/vcpkg && ./vcpkg install gtest:x64-linux
