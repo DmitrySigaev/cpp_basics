@@ -5,32 +5,32 @@
 
 #FROM python:latest
 #FROM ubuntu:16.04
-FROM ubuntu:latest
+FROM sixcomp/sixcom-lx:232
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends zip unzip git build-essential \
-                    ca-certificates python3-dev make cmake curl tar software-properties-common \
-                    libx11-dev mesa-common-dev libxi-dev libxext-dev libgl1-mesa-dev libglu1-mesa-dev libx11-xcb-dev \
-                    bison
+#RUN apt-get update && \
+#    apt-get install -y --no-install-recommends zip unzip git build-essential \
+#                    ca-certificates python3-dev make cmake curl tar software-properties-common \
+#                    libx11-dev mesa-common-dev libxi-dev libxext-dev libgl1-mesa-dev libglu1-mesa-dev libx11-xcb-dev \
+#                    bison
 
 #libx11-dev libmesa-dev libxi-dev libxext-dev
 
 
-RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y  && \
-      apt-get update -y && \
-      apt-get install g++-9 -y
+#RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y  && \
+#      apt-get update -y && \
+#      apt-get install g++-9 -y
 
 
-RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
-RUN cd /opt/vcpkg && ls .
-RUN cd /opt/vcpkg && ./bootstrap-vcpkg.sh
+#RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
+#RUN cd /opt/vcpkg && ls .
+#RUN cd /opt/vcpkg && ./bootstrap-vcpkg.sh
 
 #RUN cd /opt/vcpkg && ./vcpkg install python3:x64-linux
 #RUN cd /opt/vcpkg && ./vcpkg install boost-python:x64-linux
-RUN cd /opt/vcpkg && ./vcpkg install gsl:x64-linux
-RUN cd /opt/vcpkg && ./vcpkg install gtest:x64-linux
-#RUN cd /opt/vcpkg && ./vcpkg install qt5[core]:x64-linux
+#RUN cd /opt/vcpkg && ./vcpkg install gsl:x64-linux
+#RUN cd /opt/vcpkg && ./vcpkg install gtest:x64-linux
+RUN cd /opt/vcpkg && ./vcpkg install qt5[core]:x64-linux
 
 #tests
 
