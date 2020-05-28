@@ -8,7 +8,7 @@ FROM ubuntu:16.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends zip unzip git \
+    apt-get install -y --no-install-recommends zip unzip git build-essential \
                     ca-certificates python cmake curl tar
 
 
