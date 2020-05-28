@@ -12,6 +12,11 @@ RUN apt-get update && \
                     ca-certificates python cmake curl tar
 
 
+RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y  && \
+      apt-get update -y && \
+      apt-get install g++-7 -y
+
+
 RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
 RUN cd /opt/vcpkg && ls .
 RUN cd /opt/vcpkg && ./bootstrap-vcpkg.sh
