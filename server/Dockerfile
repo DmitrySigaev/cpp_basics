@@ -10,7 +10,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends zip unzip git build-essential \
-                    ca-certificates python3 make cmake curl tar software-properties-common
+                    ca-certificates python3 make cmake curl tar software-properties-common \
+                    libx11-dev libmesa-dev libxi-dev libxext-dev
 
 
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y  && \
