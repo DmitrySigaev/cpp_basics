@@ -4,7 +4,8 @@
 # В результате мы, в качестве имени образа, указываем 'python', а в качестве версии - 'latest'.
 
 #FROM python:latest
-FROM ubuntu:16.04
+#FROM ubuntu:16.04
+FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
