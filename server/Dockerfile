@@ -21,10 +21,10 @@ RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
 RUN cd /opt/vcpkg && ls .
 RUN cd /opt/vcpkg && ./bootstrap-vcpkg.sh
 
-RUN vcpkg install boost-python:x64-linux
-RUN vcpkg install gsl:x64-linux
-RUN vcpkg install gtest:x64-linux
-RUN vcpkg install qt5[core]:x64-linux
+RUN ./vcpkg install boost-python:x64-linux
+RUN ./vcpkg install gsl:x64-linux
+RUN ./vcpkg install gtest:x64-linux
+RUN ./vcpkg install qt5[core]:x64-linux
 
 
 
