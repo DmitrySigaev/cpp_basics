@@ -3,7 +3,23 @@
 # Здесь нам нужно импортировать образ python (с DockerHub).
 # В результате мы, в качестве имени образа, указываем 'python', а в качестве версии - 'latest'.
 
-FROM python:latest
+#FROM python:latest
+FROM ubuntu:16.04
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends zip unzip git \
+                    ca-certificates python cmake 
+
+RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
+RUN cd /opt/vcpkg && bootstrap-vcpkg.sh
+
+RUN vcpkg install boost-python:x64-linux
+RUN vcpkg install gsl:x64-linux
+RUN vcpkg install gtest:x64-linux
+RUN vcpkg install qt5[core]:x64-linux
+
+
 
 # Для того чтобы запустить в контейнере код, написанный на Python, нам нужно импортировать файлы 'server.py' и 'index.html'.
 # Для того чтобы это сделать, мы используем ключевое слово 'ADD'.
