@@ -29,7 +29,7 @@ RUN cd /opt/vcpkg && ./vcpkg install gsl:x64-linux
 RUN cd /opt/vcpkg && ./vcpkg install gtest:x64-linux
 RUN cd /opt/vcpkg && ./vcpkg install qt5[core]:x64-linux
 
-
+#tests
 
 # Для того чтобы запустить в контейнере код, написанный на Python, нам нужно импортировать файлы 'server.py' и 'index.html'.
 # Для того чтобы это сделать, мы используем ключевое слово 'ADD'.
