@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends zip unzip git build-essential \
-                    ca-certificates python cmake curl tar
+                    ca-certificates python cmake curl tar software-properties-common
 
 
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y  && \
