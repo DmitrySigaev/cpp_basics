@@ -14,7 +14,7 @@ RUN apt-get update && \
 
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y  && \
       apt-get update -y && \
-      apt-get install g++-7 -y
+      apt-get install g++-9 -y
 
 
 RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
