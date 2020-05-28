@@ -14,6 +14,7 @@ ENV DEBIAN_FRONTEND noninteractive
 #                    libx11-dev mesa-common-dev libxi-dev libxext-dev libgl1-mesa-dev libglu1-mesa-dev libx11-xcb-dev \
 #                    bison
 
+#for updating only
 RUN apt-get update && apt-get install -y --no-install-recommends flex
 
 #libx11-dev libmesa-dev libxi-dev libxext-dev
