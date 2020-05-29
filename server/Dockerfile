@@ -5,7 +5,7 @@
 
 #FROM python:latest
 #FROM ubuntu:16.04
-FROM sixcomp/sixcom-lx:232
+FROM sixcomp/sixcom-lx:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 #RUN apt-get update && \
