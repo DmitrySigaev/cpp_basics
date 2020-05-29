@@ -12,10 +12,10 @@ ENV DEBIAN_FRONTEND noninteractive
 #    apt-get install -y --no-install-recommends zip unzip git build-essential \
 #                    ca-certificates python3-dev make cmake curl tar software-properties-common \
 #                    libx11-dev mesa-common-dev libxi-dev libxext-dev libgl1-mesa-dev libglu1-mesa-dev libx11-xcb-dev \
-#                    bison
+#                    bison flex
 
 #we rollback when it build successful
-RUN apt-get update && apt-get install -y --no-install-recommends flex
+RUN apt-get update && apt-get install -y --no-install-recommends python3-dev
 
 #libx11-dev libmesa-dev libxi-dev libxext-dev
 
@@ -29,11 +29,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends flex
 #RUN cd /opt/vcpkg && ls .
 #RUN cd /opt/vcpkg && ./bootstrap-vcpkg.sh
 
-#RUN cd /opt/vcpkg && ./vcpkg install python3:x64-linux
-#RUN cd /opt/vcpkg && ./vcpkg install boost-python:x64-linux
+####RUN cd /opt/vcpkg && ./vcpkg install python3:x64-linux
+RUN cd /opt/vcpkg && ./vcpkg install boost-python:x64-linux
 #RUN cd /opt/vcpkg && ./vcpkg install gsl:x64-linux
 #RUN cd /opt/vcpkg && ./vcpkg install gtest:x64-linux
-RUN cd /opt/vcpkg && ./vcpkg install qt5[core]:x64-linux
+#RUN cd /opt/vcpkg && ./vcpkg install qt5[core]:x64-linux
 
 #tests
 
