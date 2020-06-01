@@ -3,14 +3,13 @@
 # Здесь нам нужно импортировать образ python (с DockerHub).
 # В результате мы, в качестве имени образа, указываем 'python', а в качестве версии - 'latest'.
 
-#FROM python:latest
-FROM sixcomp/sixcom:latest
+FROM python:latest
+#FROM sixcomp/sixcom:latest
 ENV DEBIAN_FRONTEND noninteractive
 
-#RUN apt-get update && \
-#    apt-get install -y --no-install-recommends zip unzip git build-essential  ca-certificates \
-#     python3-dev make cmake curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
-#                    bison flex
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends zip unzip git build-essential  ca-certificates \
+     python3-dev make cmake curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
 
 #we rollback when it build successful
 RUN apt-get purge cmake && snap install cmake --classic
