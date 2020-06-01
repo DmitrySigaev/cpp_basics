@@ -9,24 +9,25 @@ ENV DEBIAN_FRONTEND noninteractive
 
 
 #we rollback when it build successful
-RUN apt-get update && \
-       apt-get install -y --no-install-recommends apt-transport-https ca-certificates gnupg software-properties-common wget
+#RUN apt-get update && \
+#       apt-get install -y --no-install-recommends apt-transport-https ca-certificates gnupg software-properties-common wget
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends zip unzip git build-essential  ca-certificates \
      python3-dev make curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
 
-RUN  wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+#RUN  wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
 
-RUN  apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'
+#RUN  apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'
 
-RUN  apt-get update
+#RUN  apt-get update
 
-RUN  apt-get install -y --no-install-recommends kitware-archive-keyring
-RUN  rm /etc/apt/trusted.gpg.d/kitware.gpg
+#RUN  apt-get install -y --no-install-recommends kitware-archive-keyring
+#RUN  rm /etc/apt/trusted.gpg.d/kitware.gpg
 
-RUN  apt-get install -y --no-install-recommends cmake
+#RUN  apt-get install -y --no-install-recommends cmake
 
+RUN curl -s "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
 #libx11-dev libmesa-dev libxi-dev libxext-dev
 
                                                                              
