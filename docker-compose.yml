@@ -19,7 +19,7 @@ services:
 
   server:
  
-    image: sixcomp/sixcom-lx:latest
+    image: sixcomp/sixcom-pybase:latest
 
     # Ключевое слово "build" позволяет задать
     # путь к файлу Dockerfile, который нужно использовать для создания образа,
@@ -27,7 +27,7 @@ services:
     # Здесь 'server/' соответствует пути к папке сервера,
     # которая содержит соответствующий Dockerfile.
 
-    build: server/
+    build: test/
 
     # Команда, которую нужно запустить после создания образа.
     # Следующая команда означает запуск "python ./server.py".

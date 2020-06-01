@@ -3,23 +3,20 @@
 # Здесь нам нужно импортировать образ python (с DockerHub).
 # В результате мы, в качестве имени образа, указываем 'python', а в качестве версии - 'latest'.
 
-#FROM python:latest
-#FROM ubuntu:16.04
-FROM sixcomp/sixcom-lx:233
+FROM python:latest
 ENV DEBIAN_FRONTEND noninteractive
 
-#RUN apt-get update && \
-#    apt-get install -y --no-install-recommends zip unzip git build-essential \
-#                    ca-certificates python3-dev make cmake curl tar software-properties-common \
-#                    libx11-dev mesa-common-dev libxi-dev libxext-dev libgl1-mesa-dev libglu1-mesa-dev libx11-xcb-dev \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends zip unzip git build-essential  ca-certificates \
+     python3-dev make cmake curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
 #                    bison flex
 
 #we rollback when it build successful
-RUN apt-get update && apt-get install -y --no-install-recommends python3-dev
+#RUN apt-get update && apt-get install -y --no-install-recommends python3-dev
 
 #libx11-dev libmesa-dev libxi-dev libxext-dev
 
-
+                                                                             
 #RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y  && \
 #      apt-get update -y && \
 #      apt-get install g++-9 -y
@@ -30,7 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends python3-dev
 #RUN cd /opt/vcpkg && ./bootstrap-vcpkg.sh
 
 ####RUN cd /opt/vcpkg && ./vcpkg install python3:x64-linux
-RUN cd /opt/vcpkg && ./vcpkg install boost-python:x64-linux
+#RUN cd /opt/vcpkg && ./vcpkg install boost-python:x64-linux
 #RUN cd /opt/vcpkg && ./vcpkg install gsl:x64-linux
 #RUN cd /opt/vcpkg && ./vcpkg install gtest:x64-linux
 #RUN cd /opt/vcpkg && ./vcpkg install qt5[core]:x64-linux
