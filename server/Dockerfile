@@ -3,7 +3,7 @@
 # Здесь нам нужно импортировать образ python (с DockerHub).
 # В результате мы, в качестве имени образа, указываем 'python', а в качестве версии - 'latest'.
 
-FROM python:latest
+FROM sixcomp/python:latest
 #FROM sixcomp/sixcom:latest
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -30,12 +30,19 @@ RUN apt-get update && \
 RUN curl -s "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
 
 #качаем пакет
-RUN curl -s -o gcc-9b.dbg http://ftp.us.debian.org/debian/pool/main/g/gcc-9/gcc-9-base_9.3.0-13_amd64.deb 
-RUN dpkg -i gcc-9b.dbg && apt-get install -y -f 
+##RUN curl -s -o gcc-9b.dbg http://ftp.us.debian.org/debian/pool/main/g/gcc-9/gcc-9-base_9.3.0-13_amd64.deb 
+##RUN dpkg -i gcc-9b.dbg && apt-get install -y -f 
 
-RUN curl -s -o gcc-9.dbg http://ftp.us.debian.org/debian/pool/main/g/gcc-9/g++-9_9.3.0-13_amd64.deb 
-RUN dpkg -i gcc-9.dbg && apt-get install -y -f 
-RUN apt-get update -y && apt-get install -y --no-install-recommends g++-9  
+##RUN curl -s -o libgcc-9b.dbg http://ftp.us.debian.org/debian/pool/main/g/gcc-9/libstdc++-9-dev_9.3.0-13_amd64.deb 
+##RUN dpkg -i libgcc-9b.dbg && apt-get install -y -f 
+
+##RUN curl -s -o gcc-9b.dbg http://ftp.us.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.3.0-13_amd64.deb 
+##RUN dpkg -i gcc-9b.dbg && apt-get install -y -f 
+
+
+##RUN curl -s -o gccpp-9.dbg http://ftp.us.debian.org/debian/pool/main/g/gcc-9/g++-9_9.3.0-13_amd64.deb 
+##RUN dpkg -i gccpp-9.dbg && apt-get install -y -f 
+##RUN apt-get update -y && apt-get install -y --no-install-recommends g++-9  
 
 #
    
