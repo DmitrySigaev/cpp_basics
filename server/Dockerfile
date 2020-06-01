@@ -31,7 +31,7 @@ RUN curl -s "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | t
 #libx11-dev libmesa-dev libxi-dev libxext-dev
 
                                                                              
-RUN apt-get update -y && apt-get install -y --no-install-recommends  g++-9
+RUN apt-get update -y && apt-get install -y --no-install-recommends -t experimental install g++-9
 
 
 #RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
