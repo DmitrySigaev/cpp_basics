@@ -12,6 +12,10 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
        apt-get install -y --no-install-recommends apt-transport-https ca-certificates gnupg software-properties-common wget
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends zip unzip git build-essential  ca-certificates \
+     python3-dev make curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
+
 RUN  wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
 
 RUN  apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'
@@ -21,10 +25,7 @@ RUN  apt-get update
 RUN  apt-get install -y --no-install-recommends kitware-archive-keyring
 RUN  rm /etc/apt/trusted.gpg.d/kitware.gpg
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends zip unzip git build-essential  ca-certificates \
-     python3-dev make cmake curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
-
+RUN  apt-get install -y --no-install-recommends cmake
 
 #libx11-dev libmesa-dev libxi-dev libxext-dev
 
