@@ -12,7 +12,9 @@ RUN apt-get update && \
      python3-dev make curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
 
 #we rollback when it build successful
-RUN  apt-get update && apt-get install -y --no-install-recommends snap && snap install cmake --classic
+RUN  apt-get update && apt-get install -y --no-install-recommends snap 
+
+RUN  snap install cmake --classic
 
 #libx11-dev libmesa-dev libxi-dev libxext-dev
 
