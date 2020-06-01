@@ -12,11 +12,19 @@ RUN apt-get update && \
      python3-dev make curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
 
 #we rollback when it build successful
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+RUN apt-get update && \
+       apt-get install -y --no-install-recommends apt-transport-https ca-certificates gnupg software-properties-common wget
 
-RUN  apt update && apt install -y --no-install-recommends snap 
+RUN  wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
 
-RUN  snap install cmake --classic
+RUN  apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'
+
+RUN  apt-get update
+
+RUN  apt-get install -y --no-install-recommends kitware-archive-keyring
+RUN  rm /etc/apt/trusted.gpg.d/kitware.gpg
+
+RUN apt-get install -y --no-install-recommends  cmake
 
 #libx11-dev libmesa-dev libxi-dev libxext-dev
 
