@@ -30,13 +30,13 @@ RUN apt-get update && \
 RUN curl -s "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
 
 
-#RUN curl -s http://ftp.us.debian.org/debian/pool/main/g/gcc-9/g++-9_9.3.0-13_amd64.deb | pa --strip-components=1 -xz -C /usr/local
+#RUN curl -s http://ftp.us.debian.org/debian/pool/main/g/gcc-9/g++-9_9.3.0-13_amd64.deb | dpkg -i --strip-components=1 -xz -C /usr/local
 #
    
 RUN  echo "deb http://deb.debian.org/debian experimental main" | tee /etc/apt/sources.list.d/docker.list 
 
                                                                           
-RUN apt-get update -y && apt-get -t experimental install -y --no-install-recommends g++
+RUN apt-get update -y && apt-get -t experimental install -y --no-install-recommends g++-10
 
 
 #RUN cd /opt && git clone https://github.com/microsoft/vcpkg.git vcpkg
