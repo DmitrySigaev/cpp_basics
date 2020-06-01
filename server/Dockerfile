@@ -9,10 +9,10 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends zip unzip git build-essential  ca-certificates \
-     python3-dev make cmake curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
+     python3-dev make curl tar software-properties-common qtbase5-dev libgsl-dev  libgtest-dev libboost-all-dev
 
 #we rollback when it build successful
-RUN apt-get purge cmake && snap install cmake --classic
+RUN  snap install cmake --classic
 
 #libx11-dev libmesa-dev libxi-dev libxext-dev
 
