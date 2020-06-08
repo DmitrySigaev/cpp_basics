@@ -1,0 +1,1192 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_7/.mount
+[    0s] Using BUILD_ARCH=x86_64:i686:i586:i486:i386
+[    0s] Doing kvm build in /var/cache/obs/worker/root_7/root
+[    0s] 
+[    0s] 
+[    0s] lamb55 started "build boost-defaults.spec" at Sun Apr 19 20:38:45 UTC 2020.
+[    0s] 
+[    0s] Building boost-defaults for project 'openSUSE:Factory' repository 'standard' arch 'x86_64' srcmd5 '71211ffd1750a330ed088a43859158c9'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_7/.build-srcdir/boost-defaults.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_7/.build-srcdir/boost-defaults.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/7/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_7/.build.rpmlist /var/cache/obs/worker/root_7/.build-srcdir/boost-defaults.spec build ...
+[    1s] cycle: rpm-config-SUSE -> rpm
+[    1s]   breaking dependency rpm-config-SUSE -> rpm
+[    1s] [1/32] preinstalling filesystem...
+[    1s] [2/32] preinstalling permissions...
+[    1s] [3/32] preinstalling glibc...
+[    1s] [4/32] preinstalling fillup...
+[    1s] [5/32] preinstalling libacl1...
+[    1s] [6/32] preinstalling libattr1...
+[    1s] [7/32] preinstalling libbz2-1...
+[    1s] [8/32] preinstalling libcap2...
+[    1s] [9/32] preinstalling libgcc_s1...
+[    1s] [10/32] preinstalling libgpg-error0...
+[    1s] [11/32] preinstalling liblua5_3-5...
+[    1s] [12/32] preinstalling liblzma5...
+[    1s] [13/32] preinstalling libpcre1...
+[    1s] [14/32] preinstalling libpopt0...
+[    1s] [15/32] preinstalling libz1...
+[    1s] [16/32] preinstalling libzstd1...
+[    1s] [17/32] preinstalling attr...
+[    1s] [18/32] preinstalling libelf1...
+[    2s] [19/32] preinstalling libgcrypt20...
+[    2s] [20/32] preinstalling libncurses6...
+[    2s] [21/32] preinstalling libselinux1...
+[    2s] [22/32] preinstalling libreadline8...
+[    2s] [23/32] preinstalling tar...
+[    2s] [24/32] preinstalling bash...
+[    2s] [25/32] preinstalling diffutils...
+[    2s] [26/32] preinstalling grep...
+[    2s] [27/32] preinstalling pam...
+[    2s] [28/32] preinstalling sed...
+[    2s] [29/32] preinstalling coreutils...
+[    2s] [30/32] preinstalling aaa_base...
+[    2s] [31/32] preinstalling rpm-config-SUSE...
+[    2s] [32/32] preinstalling rpm...
+[    2s] 
+[    3s] [1/12] preinstalling kernel-obs-build...
+[    3s] [2/12] preinstalling libblkid1...
+[    3s] [3/12] preinstalling libcrypt1...
+[    3s] [4/12] preinstalling libdb-4_8...
+[    3s] [5/12] preinstalling libmnl0...
+[    3s] [6/12] preinstalling libsepol1...
+[    3s] [7/12] preinstalling libsmartcols1...
+[    3s] [8/12] preinstalling libuuid1...
+[    3s] [9/12] preinstalling iproute2...
+[    3s] [10/12] preinstalling libmount1...
+[    3s] [11/12] preinstalling perl-base...
+[    4s] [12/12] preinstalling util-linux...
+[    4s] copying packages...
+[    5s] reordering...cycle: libncurses6 -> terminfo-base
+[    5s]   breaking dependency terminfo-base -> libncurses6
+[    5s] cycle: binutils -> libctf0
+[    5s]   breaking dependency binutils -> libctf0
+[    5s] cycle: rpm -> rpm-config-SUSE
+[    5s]   breaking dependency rpm -> rpm-config-SUSE
+[    5s] cycle: libcrack2 -> cracklib
+[    5s]   breaking dependency cracklib -> libcrack2
+[    5s] done
+[    5s] booting kvm...
+[    5s] ### VM INTERACTION START ###
+[    5s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -runas qemu -net none -kernel /var/cache/obs/worker/root_7/.mount/boot/kernel -initrd /var/cache/obs/worker/root_7/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime ext4.allow_unsupported=1 kpti=off pti=off spectre_v2=off panic=1 quiet no-kvmclock elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc console=ttyS0 init=/.build/build -m 8192 -drive file=/var/cache/obs/worker/root_7/root,format=raw,if=none,id=disk,cache=unsafe -device virtio-blk-pci,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_7/swap,format=raw,if=none,id=swap,cache=unsafe -device virtio-blk-pci,drive=swap,serial=1 -serial stdio -chardev socket,id=monitor,server,nowait,path=/var/cache/obs/worker/root_7/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 8
+[    6s] c[?7l[2J[0mSeaBIOS (version rel-1.12.0-0-ga698c89-rebuilt.opensuse.org)
+[   10s] Booting from ROM..c[?7l[2J[    3.287454] dracut-pre-udev[309]: modprobe: FATAL: Module kqemu not found in directory /lib/modules/5.6.4-1-default
+[   10s] [    3.299447] dracut-pre-udev[311]: modprobe: FATAL: Module ext2 not found in directory /lib/modules/5.6.4-1-default
+[   10s] [    3.303038] dracut-pre-udev[312]: modprobe: FATAL: Module ext3 not found in directory /lib/modules/5.6.4-1-default
+[   10s] [    3.992761] dracut-pre-udev[329]: modprobe: FATAL: Module nf_conntrack_ipv6 not found in directory /lib/modules/5.6.4-1-default
+[   10s] [    4.099717] dracut-pre-udev[340]: modprobe: FATAL: Module ibmvscsi not found in directory /lib/modules/5.6.4-1-default
+[   10s] [    4.122524] dracut-pre-udev[343]: modprobe: FATAL: Module ibmveth not found in directory /lib/modules/5.6.4-1-default
+[   11s] ### VM INTERACTION END ###
+[   11s] 2nd stage started in virtual machine
+[   11s] machine type: x86_64
+[   11s] Linux version: 5.6.4-1-default #[    4.863659] sysrq: Changing Loglevel
+[   11s] 1 SMP Mon Apr 13[    4.865296] sysrq: Loglevel set to 4
+[   11s]  18:13:21 UTC 2020 (e42da4f)
+[   11s] Increasing log level from now on...
+[   11s] Setting up swapspace version 1, size = 2 GiB (2097147904 bytes)
+[   11s] no label, UUID=6fc2d64e-2e8a-4f87-a6f5-b792a7e26dab
+[   11s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[   11s] swapon: /dev/vdb: pagesize=4096, swapsize=2097152000, devsize=2097152000
+[   11s] swapon /dev/vdb
+[   11s] WARNING: udev not running, creating extra device nodes
+[   11s] logging output to //.build.log...
+[   11s] processing recipe /.build-srcdir/boost-defaults.spec ...
+[   11s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/boost-defaults.spec build ...
+[   11s] running aaa_base preinstall script
+[   11s] running aaa_base postinstall script
+[   11s] Updating /etc/sysconfig/language ...
+[   11s] Updating /etc/sysconfig/proxy ...
+[   11s] Updating /etc/sysconfig/windowmanager ...
+[   11s] chown: invalid user: 'root:root'
+[   11s] chown: invalid user: 'root:root'
+[   11s] initializing rpm db...
+[   11s] querying package ids...
+[   12s] [1/130] cumulate file-magic-5.38-2.2
+[   12s] [2/130] cumulate kernel-obs-build-5.6.4-1.2
+[   12s] [3/130] cumulate libtirpc-netconfig-1.2.6-1.1
+[   12s] [4/130] cumulate pkgconf-m4-1.6.3-1.2
+[   12s] [5/130] cumulate rpmlint-Factory-strict-1.0-98.1
+[   12s] [6/130] cumulate system-user-root-20190513-1.6
+[   12s] [7/130] cumulate filesystem-15.5-29.1
+[   12s] [8/130] cumulate glibc-2.31-3.2
+[   12s] [9/130] cumulate fillup-1.42-275.1
+[   12s] [10/130] cumulate hostname-3.21-1.5
+[   12s] [11/130] cumulate libacl1-2.2.53-3.7
+[   12s] [12/130] cumulate libatomic1-10.0.1+git175037-1.5
+[   12s] [13/130] cumulate libattr1-2.4.48-3.4
+[   12s] [14/130] cumulate libaudit1-2.8.5-1.2
+[   12s] [15/130] cumulate libblkid1-2.35.1-1.1
+[   12s] [16/130] cumulate libbz2-1-1.0.8-2.2
+[   12s] [17/130] cumulate libcap-ng0-0.7.9-2.3
+[   12s] [18/130] cumulate libcap2-2.32-1.1
+[   12s] [19/130] cumulate libcom_err2-1.45.5-1.4
+[   12s] [20/130] cumulate libcrypt1-4.4.15-1.2
+[   12s] [21/130] cumulate libeconf0-0.3.5+git20200203.3144b69-1.1
+[   12s] [22/130] cumulate libexpat1-2.2.9-1.2
+[   12s] [23/130] cumulate libgcc_s1-10.0.1+git175037-1.5
+[   12s] [24/130] cumulate libgdbm6-1.18.1-3.2
+[   12s] [25/130] cumulate libgmp10-6.2.0-2.2
+[   12s] [26/130] cumulate libgomp1-10.0.1+git175037-1.5
+[   12s] [27/130] cumulate libgpg-error0-1.37-1.1
+[   12s] [28/130] cumulate libitm1-10.0.1+git175037-1.5
+[   12s] [29/130] cumulate libkeyutils1-1.6-1.4
+[   12s] [30/130] cumulate liblua5_3-5-5.3.5-2.2
+[   12s] [31/130] cumulate liblzma5-5.2.5-1.1
+[   12s] [32/130] cumulate libmnl0-1.0.4-1.11
+[   12s] [33/130] cumulate libpcre1-8.42-3.2
+[   12s] [34/130] cumulate libpkgconf3-1.6.3-1.2
+[   12s] [35/130] cumulate libpopt0-1.16-32.1
+[   12s] [36/130] cumulate libsepol1-3.0-1.1
+[   12s] [37/130] cumulate libsmartcols1-2.35.1-1.1
+[   12s] [38/130] cumulate libuuid1-2.35.1-1.1
+[   12s] [39/130] cumulate libverto1-0.2.6-7.16
+[   12s] [40/130] cumulate libz1-1.2.11-12.2
+[   12s] [41/130] cumulate libzstd1-1.4.4-1.2
+[   12s] [42/130] cumulate patch-2.7.6-3.14
+[   12s] [43/130] cumulate update-alternatives-1.19.0.5-5.2
+[   12s] [44/130] cumulate attr-2.4.48-3.4
+[   12s] [45/130] cumulate libctf-nobfd0-2.34-1.2
+[   12s] [46/130] cumulate libelf1-0.179-1.1
+[   12s] [47/130] cumulate libgcrypt20-1.8.5-2.3
+[   12s] [48/130] cumulate libgdbm_compat4-1.18.1-3.2
+[   12s] [49/130] cumulate libisl22-0.22.1-1.1
+[   12s] [50/130] cumulate libmpfr6-4.0.2-3.1
+[   12s] [51/130] cumulate libselinux1-3.0-1.1
+[   12s] [52/130] cumulate libstdc++6-10.0.1+git175037-1.5
+[   12s] [53/130] cumulate perl-base-5.30.1-3.2
+[   12s] [54/130] cumulate pkgconf-1.6.3-1.2
+[   12s] [55/130] cumulate chkstat-1550_20200324-13.1
+[   12s] [56/130] cumulate libfdisk1-2.35.1-1.1
+[   12s] [57/130] cumulate libmagic1-5.38-2.2
+[   12s] [58/130] cumulate build-mkbaselibs-20200131-1.2
+[   12s] [59/130] cumulate rpm-build-perl-4.15.1-5.1
+[   12s] [60/130] cumulate dwz-0.13-6.1
+[   12s] [61/130] cumulate file-5.38-2.2
+[   12s] [62/130] cumulate libasan5-9.3.1+git1296-1.1
+[   12s] [63/130] cumulate libdb-4_8-4.8.30-38.3
+[   12s] [64/130] cumulate liblsan0-10.0.1+git175037-1.5
+[   12s] [65/130] cumulate libmount1-2.35.1-1.1
+[   12s] [66/130] cumulate libmpc3-1.1.0-2.5
+[   12s] [67/130] cumulate libtsan0-10.0.1+git175037-1.5
+[   12s] [68/130] cumulate libubsan1-10.0.1+git175037-1.5
+[   12s] [69/130] cumulate tar-1.32-2.2
+[   12s] [70/130] cumulate libdw1-0.179-1.1
+[   12s] [71/130] cumulate libsemanage1-3.0-1.1
+[   12s] [72/130] cumulate cpp9-9.3.1+git1296-1.1
+[   12s] [73/130] cumulate perl-5.30.1-3.2
+[   12s] [74/130] cumulate brp-check-suse-84.87+git20200215.db1636b-1.1
+[   12s] [75/130] cumulate terminfo-base-6.2.20200404-2.1
+[   12s] [76/130] cumulate libncurses6-6.2.20200404-2.1
+[   12s] [77/130] cumulate libreadline8-8.0-4.2
+[   12s] [78/130] cumulate ncurses-utils-6.2.20200404-2.1
+[   12s] [79/130] cumulate bash-5.0.11-5.1
+[   12s] [80/130] cumulate cpio-2.12-9.1
+[   12s] [81/130] cumulate cpp-9-1.6
+[   12s] [82/130] cumulate diffutils-3.7-3.3
+[   12s] [83/130] cumulate gzip-1.10-3.6
+[   12s] [84/130] cumulate make-4.3-1.1
+[   12s] [85/130] cumulate which-2.21-4.16
+[   12s] [86/130] cumulate bzip2-1.0.8-2.2
+[   12s] [87/130] cumulate cracklib-2.9.6-2.15
+[   12s] [88/130] cumulate findutils-4.7.0-2.4
+[   12s] [89/130] cumulate gawk-5.0.1-3.10
+[   12s] [90/130] cumulate gettext-runtime-mini-0.20.1-2.1
+[   12s] [91/130] cumulate grep-3.4-1.5
+[   12s] [92/130] cumulate pkgconf-pkg-config-1.6.3-1.2
+[   12s] [93/130] cumulate xz-5.2.5-1.1
+[   12s] [94/130] cumulate sed-4.8-1.3
+[   12s] [95/130] cumulate iproute2-5.6.0-2.1
+[   12s] [96/130] cumulate coreutils-8.32-1.2
+[   12s] [97/130] cumulate binutils-2.34-1.2
+[   12s] [98/130] cumulate systemd-rpm-macros-4-2.7
+[   12s] [99/130] cumulate libxcrypt-devel-4.4.15-1.2
+[   12s] [100/130] cumulate linux-glibc-devel-5.6-1.1
+[   12s] [101/130] cumulate glibc-locale-base-2.31-3.2
+[   12s] [102/130] cumulate libcrack2-2.9.6-2.15
+[   12s] [103/130] cumulate libctf0-2.34-1.2
+[   12s] [104/130] cumulate gettext-tools-mini-0.20.1-2.1
+[   12s] [105/130] cumulate permissions-config-1550_20200324-13.1
+[   12s] [106/130] cumulate aaa_base-84.87+git20200224.7105b32-2.1
+[   12s] [107/130] cumulate krb5-mini-1.18-2.1
+[   12s] [108/130] cumulate rpm-4.15.1-5.1
+[   12s] [109/130] cumulate aaa_base-malloccheck-84.87+git20200224.7105b32-2.1
+[   12s] [110/130] cumulate glibc-locale-2.31-3.2
+[   12s] [111/130] cumulate permissions-20200324.1550-13.1
+[   12s] [112/130] cumulate rpm-config-SUSE-0.g56-1.1
+[   12s] [113/130] cumulate libtirpc3-1.2.6-1.1
+[   12s] [114/130] cumulate glibc-devel-2.31-3.2
+[   12s] [115/130] cumulate librpmbuild9-4.15.1-5.1
+[   12s] [116/130] cumulate build-compare-20200331T115051.28bf642-1.1
+[   12s] [117/130] cumulate libnsl2-1.2.0-2.15
+[   12s] [118/130] cumulate post-build-checks-84.87+git20200323.45c6eba-1.1
+[   12s] [119/130] cumulate rpmlint-mini-1.10-17.2
+[   12s] [120/130] cumulate gcc9-9.3.1+git1296-1.1
+[   12s] [121/130] cumulate rpmlint-Factory-1.0-98.1
+[   12s] [122/130] cumulate gcc-9-1.6
+[   12s] [123/130] cumulate pam-1.3.1+git20190923.ea78d67-5.1
+[   12s] [124/130] cumulate gcc-PIE-9-1.6
+[   12s] [125/130] cumulate shadow-4.8.1-1.1
+[   12s] [126/130] cumulate sysuser-shadow-3.0-3.1
+[   12s] [127/130] cumulate system-group-hardware-20170617-11.1
+[   12s] [128/130] cumulate libutempter0-1.1.6-10.15
+[   12s] [129/130] cumulate util-linux-2.35.1-1.1
+[   12s] [130/130] cumulate rpm-build-4.15.1-5.1
+[   12s] now installing cumulated packages
+[   12s] Preparing...                          ########################################
+[   12s] Updating / installing...
+[   12s] system-user-root-20190513-1.6         ########################################
+[   12s] filesystem-15.5-29.1                  ########################################
+[   13s] glibc-2.31-3.2                        ########################################
+[   13s] libz1-1.2.11-12.2                     ########################################
+[   13s] libgcc_s1-10.0.1+git175037-1.5        ########################################
+[   13s] libstdc++6-10.0.1+git175037-1.5       ########################################
+[   13s] libbz2-1-1.0.8-2.2                    ########################################
+[   13s] libcrypt1-4.4.15-1.2                  ########################################
+[   13s] libgmp10-6.2.0-2.2                    ########################################
+[   13s] perl-base-5.30.1-3.2                  ########################################
+[   13s] terminfo-base-6.2.20200404-2.1        ########################################
+[   13s] libncurses6-6.2.20200404-2.1          ########################################
+[   13s] ncurses-utils-6.2.20200404-2.1        ########################################
+[   13s] libelf1-0.179-1.1                     ########################################
+[   13s] libacl1-2.2.53-3.7                    ########################################
+[   13s] fillup-1.42-275.1                     ########################################
+[   13s] libaudit1-2.8.5-1.2                   ########################################
+[   13s] libcap2-2.32-1.1                      ########################################
+[   13s] liblzma5-5.2.5-1.1                    ########################################
+[   13s] libmpfr6-4.0.2-3.1                    ########################################
+[   13s] libattr1-2.4.48-3.4                   ########################################
+[   13s] libblkid1-2.35.1-1.1                  ########################################
+[   13s] libeconf0-0.3.5+git20200203.3144b69-1.########################################
+[   13s] libgomp1-10.0.1+git175037-1.5         ########################################
+[   13s] libpopt0-1.16-32.1                    ########################################
+[   13s] update-alternatives-1.19.0.5-5.2      ########################################
+[   13s] libmpc3-1.1.0-2.5                     ########################################
+[   14s] libdw1-0.179-1.1                      ########################################
+[   14s] chkstat-1550_20200324-13.1            ########################################
+[   14s] libreadline8-8.0-4.2                  ########################################
+[   14s] bash-5.0.11-5.1                       ########################################
+[   14s] gawk-5.0.1-3.10                       ########################################
+[   14s] update-alternatives: using /usr/bin/gawk to provide /bin/awk (awk) in auto mode
+[   14s] cpio-2.12-9.1                         ########################################
+[   14s] diffutils-3.7-3.3                     ########################################
+[   14s] xz-5.2.5-1.1                          ########################################
+[   14s] which-2.21-4.16                       ########################################
+[   14s] libisl22-0.22.1-1.1                   ########################################
+[   15s] cpp9-9.3.1+git1296-1.1                ########################################
+[   15s] libgdbm6-1.18.1-3.2                   ########################################
+[   15s] libpcre1-8.42-3.2                     ########################################
+[   15s] libselinux1-3.0-1.1                   ########################################
+[   16s] coreutils-8.32-1.2                    ########################################
+[   16s] sed-4.8-1.3                           ########################################
+[   16s] grep-3.4-1.5                          ########################################
+[   16s] libuuid1-2.35.1-1.1                   ########################################
+[   16s] libfdisk1-2.35.1-1.1                  ########################################
+[   16s] permissions-config-1550_20200324-13.1 ########################################
+[   16s] Updating /etc/sysconfig/security ...
+[   16s] /usr/bin/wall: unknown group tty. ignoring entry.
+[   16s] /usr/bin/write: unknown group tty. ignoring entry.
+[   16s] Checking permissions and ownerships - using the permissions files
+[   16s] 	/usr/share/permissions/permissions
+[   16s] 	/usr/share/permissions/permissions.easy
+[   16s] 	/etc/permissions.local
+[   16s] setting /sbin/unix_chkpwd to root:shadow 4755. (wrong owner/group root:root)
+[   16s] setting /sbin/unix2_chkpwd to root:shadow 4755. (wrong owner/group root:root)
+[   16s] setting /usr/bin/su to root:root 4755. (wrong permissions 0755)
+[   16s] setting /usr/bin/mount to root:root 4755. (wrong permissions 0755)
+[   16s] setting /usr/bin/umount to root:root 4755. (wrong permissions 0755)
+[   16s] permissions-20200324.1550-13.1        ########################################
+[   16s] systemd-rpm-macros-4-2.7              ########################################
+[   16s] linux-glibc-devel-5.6-1.1             ########################################
+[   17s] glibc-locale-base-2.31-3.2            ########################################
+[   22s] glibc-locale-2.31-3.2                 ########################################
+[   23s] libmount1-2.35.1-1.1                  ########################################
+[   23s] tar-1.32-2.2                          ########################################
+[   23s] findutils-4.7.0-2.4                   ########################################
+[   23s] libgdbm_compat4-1.18.1-3.2            ########################################
+[   23s] cpp-9-1.6                             ########################################
+[   23s] gzip-1.10-3.6                         ########################################
+[   23s] make-4.3-1.1                          ########################################
+[   23s] bzip2-1.0.8-2.2                       ########################################
+[   23s] cracklib-2.9.6-2.15                   ########################################
+[   23s] libcrack2-2.9.6-2.15                  ########################################
+[   23s] gettext-runtime-mini-0.20.1-2.1       ########################################
+[   23s] gettext-tools-mini-0.20.1-2.1         ########################################
+[   23s] dwz-0.13-6.1                          ########################################
+[   23s] rpm-build-perl-4.15.1-5.1             ########################################
+[   23s] libasan5-9.3.1+git1296-1.1            ########################################
+[   23s] libdb-4_8-4.8.30-38.3                 ########################################
+[   25s] perl-5.30.1-3.2                       ########################################
+[   25s] liblsan0-10.0.1+git175037-1.5         ########################################
+[   25s] libtsan0-10.0.1+git175037-1.5         ########################################
+[   25s] libubsan1-10.0.1+git175037-1.5        ########################################
+[   25s] libctf-nobfd0-2.34-1.2                ########################################
+[   27s] binutils-2.34-1.2                     ########################################
+[   27s] update-alternatives: using /usr/bin/ld.bfd to provide /usr/bin/ld (ld) in auto mode
+[   27s] libctf0-2.34-1.2                      ########################################
+[   27s] libatomic1-10.0.1+git175037-1.5       ########################################
+[   27s] libcap-ng0-0.7.9-2.3                  ########################################
+[   27s] libcom_err2-1.45.5-1.4                ########################################
+[   27s] libexpat1-2.2.9-1.2                   ########################################
+[   27s] libgpg-error0-1.37-1.1                ########################################
+[   27s] libgcrypt20-1.8.5-2.3                 ########################################
+[   27s] libitm1-10.0.1+git175037-1.5          ########################################
+[   27s] libkeyutils1-1.6-1.4                  ########################################
+[   27s] liblua5_3-5-5.3.5-2.2                 ########################################
+[   27s] libmnl0-1.0.4-1.11                    ########################################
+[   27s] iproute2-5.6.0-2.1                    ########################################
+[   27s] aaa_base-84.87+git20200224.7105b32-2.1########################################
+[   27s] Updating /etc/sysconfig/language ...
+[   27s] Updating /etc/sysconfig/proxy ...
+[   27s] Updating /etc/sysconfig/windowmanager ...
+[   27s] aaa_base-malloccheck-84.87+git20200224########################################
+[   27s] libpkgconf3-1.6.3-1.2                 ########################################
+[   27s] pkgconf-1.6.3-1.2                     ########################################
+[   27s] libsepol1-3.0-1.1                     ########################################
+[   27s] libsemanage1-3.0-1.1                  ########################################
+[   27s] libsmartcols1-2.35.1-1.1              ########################################
+[   27s] libverto1-0.2.6-7.16                  ########################################
+[   28s] krb5-mini-1.18-2.1                    ########################################
+[   28s] Updating /etc/sysconfig/kadmind ...
+[   28s] Updating /etc/sysconfig/krb5kdc ...
+[   28s] libzstd1-1.4.4-1.2                    ########################################
+[   28s] rpm-config-SUSE-0.g56-1.1             ########################################
+[   28s] rpm-4.15.1-5.1                        ########################################
+[   28s] Updating /etc/sysconfig/services ...
+[   28s] patch-2.7.6-3.14                      ########################################
+[   28s] pkgconf-m4-1.6.3-1.2                  ########################################
+[   28s] pkgconf-pkg-config-1.6.3-1.2          ########################################
+[   28s] libxcrypt-devel-4.4.15-1.2            ########################################
+[   28s] glibc-devel-2.31-3.2                  ########################################
+[   32s] gcc9-9.3.1+git1296-1.1                ########################################
+[   32s] gcc-9-1.6                             ########################################
+[   32s] libtirpc-netconfig-1.2.6-1.1          ########################################
+[   32s] libtirpc3-1.2.6-1.1                   ########################################
+[   32s] libnsl2-1.2.0-2.15                    ########################################
+[   32s] shadow-4.8.1-1.1                      ########################################
+[   32s] pam-1.3.1+git20190923.ea78d67-5.1     ########################################
+[   32s] sysuser-shadow-3.0-3.1                ########################################
+[   32s] /usr/sbin/groupadd -r kmem
+[   32s] /usr/sbin/groupadd -r lock
+[   32s] /usr/sbin/groupadd -r -g 5 tty
+[   32s] /usr/sbin/groupadd -r utmp
+[   32s] /usr/sbin/groupadd -r audio
+[   32s] /usr/sbin/groupadd -r cdrom
+[   32s] /usr/sbin/groupadd -r dialout
+[   32s] /usr/sbin/groupadd -r disk
+[   32s] /usr/sbin/groupadd -r input
+[   32s] /usr/sbin/groupadd -r kvm
+[   32s] /usr/sbin/groupadd -r lp
+[   32s] /usr/sbin/groupadd -r render
+[   32s] /usr/sbin/groupadd -r tape
+[   32s] /usr/sbin/groupadd -r video
+[   32s] system-group-hardware-20170617-11.1   ########################################
+[   32s] libutempter0-1.1.6-10.15              ########################################
+[   33s] util-linux-2.35.1-1.1                 ########################################
+[   33s] setting /usr/bin/wall to root:tty 2755. (wrong permissions 0755)
+[   33s] setting /usr/bin/write to root:tty 2755. (wrong permissions 0755)
+[   33s] setting /usr/bin/mount to root:root 4755. (wrong permissions 0755)
+[   33s] setting /usr/bin/umount to root:root 4755. (wrong permissions 0755)
+[   33s] setting /usr/bin/su to root:root 4755. (wrong permissions 0755)
+[   33s] grep: /etc/default/su: No such file or directory
+[   33s] file-magic-5.38-2.2                   ########################################
+[   33s] libmagic1-5.38-2.2                    ########################################
+[   33s] file-5.38-2.2                         ########################################
+[   33s] librpmbuild9-4.15.1-5.1               ########################################
+[   33s] rpmlint-mini-1.10-17.2                ########################################
+[   33s] rpmlint-Factory-1.0-98.1              ########################################
+[   33s] rpm-build-4.15.1-5.1                  ########################################
+[   33s] build-compare-20200331T115051.28bf642-########################################
+[   33s] gcc-PIE-9-1.6                         ########################################
+[   33s] post-build-checks-84.87+git20200323.45########################################
+[   33s] brp-check-suse-84.87+git20200215.db163########################################
+[   33s] attr-2.4.48-3.4                       ########################################
+[   33s] build-mkbaselibs-20200131-1.2         ########################################
+[   33s] hostname-3.21-1.5                     ########################################
+[   33s] rpmlint-Factory-strict-1.0-98.1       ########################################
+[   34s] kernel-obs-build-5.6.4-1.2            ########################################
+[   35s] now finalizing build dir...
+[   35s] RTNETLINK answers: File exists
+[   35s] RTNETLINK answers: File exists
+[   36s] -----------------------------------------------------------------
+[   36s] I have the following modifications for boost-defaults.spec:
+[   36s] 22c22
+[   36s] < Release:        0
+[   36s] ---
+[   36s] > Release:        2.1
+[   36s] -----------------------------------------------------------------
+[   36s] ----- building boost-defaults.spec (user abuild)
+[   36s] -----------------------------------------------------------------
+[   36s] -----------------------------------------------------------------
+[   36s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory/standard/71211ffd1750a330ed088a43859158c9-boost-defaults' /home/abuild/rpmbuild/SOURCES/boost-defaults.spec
+[   36s] setting SOURCE_DATE_EPOCH=1587081600
+[   36s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.Sewr10
+[   36s] + umask 022
+[   36s] + cd /home/abuild/rpmbuild/BUILD
+[   36s] + RPM_EC=0
+[   36s] ++ jobs -p
+[   36s] + exit 0
+[   36s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.vbbLIY
+[   36s] + umask 022
+[   36s] + cd /home/abuild/rpmbuild/BUILD
+[   36s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64
+[   36s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64
+[   36s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   36s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64
+[   36s] + cp /home/abuild/rpmbuild/SOURCES/README .
+[   36s] + RPM_EC=0
+[   36s] ++ jobs -p
+[   36s] + exit 0
+[   36s] Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.wYLlu1
+[   36s] + umask 022
+[   36s] + cd /home/abuild/rpmbuild/BUILD
+[   36s] + /usr/lib/rpm/find-debuginfo.sh -j8 --build-id-seed 1.71.0-2.1 --unique-debug-suffix -1.71.0-2.1.x86_64 --unique-debug-src-base boost-defaults-1.71.0-2.1.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/
+[   36s] + /usr/lib/rpm/brp-compress
+[   36s] + /usr/lib/rpm/brp-suse
+[   36s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[   36s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[   36s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[   36s] calling /usr/lib/rpm/brp-suse.d/brp-30-desktop
+[   36s] WARNING: '/usr/lib/rpm/brp-desktop.data/suse-screensavers.menu' does not exist
+[   37s] WARNING: '/usr/lib/rpm/brp-desktop.data/applications-kmenuedit.menu' does not exist
+[   37s] WARNING: '/usr/lib/rpm/brp-desktop.data/custom.menu' does not exist
+[   37s] calling /usr/lib/rpm/brp-suse.d/brp-40-rootfs
+[   37s] calling /usr/lib/rpm/brp-suse.d/brp-45-tcl
+[   37s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[   37s] Processing files: boost-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.C2FoZX
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/boost-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/boost-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/boost-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: boost-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: boost-jam-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.ZyNA9Y
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/boost-jam
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/boost-jam
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/boost-jam
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: boost-jam = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_headers-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.s0SGoZ
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_headers-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_headers-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_headers-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_headers-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_atomic-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.Gos8P1
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_atomic-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_atomic-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_atomic-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_atomic-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_container-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.PpNHK1
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_container-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_container-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_container-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_container-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_context-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.R8ieAZ
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_context-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_context-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_context-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_context-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_contract-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.t3XeUZ
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_contract-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_contract-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_contract-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_contract-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_coroutine-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.giOYEX
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_coroutine-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_coroutine-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_coroutine-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_coroutine-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_date_time-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.39KYQY
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_date_time-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_date_time-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_date_time-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_date_time-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_fiber-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.NzKX6X
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_fiber-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_fiber-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_fiber-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_fiber-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_filesystem-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.1xc791
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_filesystem-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_filesystem-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_filesystem-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_filesystem-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_graph-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.6PPtD1
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_graph-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_graph-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_graph-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_graph-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_iostreams-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.nbHVlZ
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_iostreams-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_iostreams-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_iostreams-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_iostreams-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_log-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.FM8fb1
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_log-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_log-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_log-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_log-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_math-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.LTcqOZ
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_math-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_math-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_math-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_math-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_mpi-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.8MRMPZ
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_mpi-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_mpi-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_mpi-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_mpi-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_graph_parallel-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.bRE21X
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_graph_parallel-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_graph_parallel-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_graph_parallel-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_graph_parallel-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_mpi_python3-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.iHgK30
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_mpi_python3-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_mpi_python3-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_mpi_python3-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_mpi_python3-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: python3-boost_parallel_mpi-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.xol3RZ
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/python3-boost_parallel_mpi
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/python3-boost_parallel_mpi
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/python3-boost_parallel_mpi
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: python3-boost_parallel_mpi = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_test-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.1nBr9X
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_test-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_test-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_test-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_test-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_program_options-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.8GdYj1
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_program_options-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_program_options-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_program_options-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_program_options-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_python3-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.8Ch1SZ
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_python3-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_python3-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_python3-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_python3-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_numpy3-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.XXhF2X
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_numpy3-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_numpy3-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_numpy3-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_numpy3-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_serialization-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.f13JYY
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_serialization-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_serialization-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_serialization-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_serialization-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_stacktrace-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.3InRKX
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_stacktrace-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_stacktrace-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_stacktrace-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_stacktrace-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_system-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.exyCf2
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_system-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_system-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_system-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_system-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_thread-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.C2vo3Y
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_thread-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_thread-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_thread-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_thread-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_wave-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.F77CI1
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_wave-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_wave-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_wave-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_wave-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_regex-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.eNfZWY
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_regex-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_regex-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_regex-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_regex-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_random-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.4rn0L0
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_random-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_random-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_random-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_random-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_chrono-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.xfqMOY
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_chrono-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_chrono-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_chrono-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_chrono-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_locale-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.mvqm70
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_locale-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_locale-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_locale-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_locale-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_timer-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.6rrFMZ
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_timer-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_timer-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_timer-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_timer-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Processing files: libboost_type_erasure-devel-1.71.0-2.1.noarch
+[   37s] Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.ZCNKq0
+[   37s] + umask 022
+[   37s] + cd /home/abuild/rpmbuild/BUILD
+[   37s] + DOCDIR=/home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_type_erasure-devel
+[   37s] + export LC_ALL=C
+[   37s] + LC_ALL=C
+[   37s] + export DOCDIR
+[   37s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_type_erasure-devel
+[   37s] + cp -pr README /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64/usr/share/doc/packages/libboost_type_erasure-devel
+[   37s] + RPM_EC=0
+[   37s] ++ jobs -p
+[   37s] + exit 0
+[   37s] Provides: libboost_type_erasure-devel = 1.71.0-2.1
+[   37s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[   37s] Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64
+[   37s] Wrote: /home/abuild/rpmbuild/SRPMS/boost-defaults-1.71.0-2.1.src.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/boost-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_context-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_coroutine-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_container-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_atomic-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/boost-jam-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_headers-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_date_time-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_contract-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_fiber-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_math-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_iostreams-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_log-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_mpi-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_graph-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_filesystem-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_mpi_python3-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_graph_parallel-devel-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/python3-boost_parallel_mpi-1.71.0-2.1.noarch.rpm
+[   38s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_program_options-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_test-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_python3-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_stacktrace-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_serialization-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_numpy3-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_random-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_thread-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_wave-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_locale-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_system-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_chrono-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_regex-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_timer-devel-1.71.0-2.1.noarch.rpm
+[   39s] Wrote: /home/abuild/rpmbuild/RPMS/noarch/libboost_type_erasure-devel-1.71.0-2.1.noarch.rpm
+[   39s] Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.PTEJCZ
+[   39s] + umask 022
+[   39s] + cd /home/abuild/rpmbuild/BUILD
+[   39s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/boost-defaults-1.71.0-2.1.x86_64
+[   39s] + RPM_EC=0
+[   39s] ++ jobs -p
+[   39s] + exit 0
+[   39s] ... checking for files with abuild user/group
+[   39s] ... running 00-check-install-rpms
+[   39s] ... installing all built rpms
+[   39s] Verifying packages...
+[   39s] Preparing packages...
+[   39s] libboost_chrono-devel-1.71.0-2.1.noarch
+[   39s] libboost_wave-devel-1.71.0-2.1.noarch
+[   39s] libboost_test-devel-1.71.0-2.1.noarch
+[   39s] libboost_contract-devel-1.71.0-2.1.noarch
+[   39s] libboost_graph_parallel-devel-1.71.0-2.1.noarch
+[   39s] libboost_iostreams-devel-1.71.0-2.1.noarch
+[   39s] libboost_timer-devel-1.71.0-2.1.noarch
+[   39s] libboost_mpi_python3-devel-1.71.0-2.1.noarch
+[   39s] libboost_program_options-devel-1.71.0-2.1.noarch
+[   39s] libboost_log-devel-1.71.0-2.1.noarch
+[   39s] libboost_atomic-devel-1.71.0-2.1.noarch
+[   39s] libboost_thread-devel-1.71.0-2.1.noarch
+[   39s] libboost_graph-devel-1.71.0-2.1.noarch
+[   39s] libboost_date_time-devel-1.71.0-2.1.noarch
+[   39s] libboost_headers-devel-1.71.0-2.1.noarch
+[   39s] libboost_fiber-devel-1.71.0-2.1.noarch
+[   39s] libboost_python3-devel-1.71.0-2.1.noarch
+[   39s] python3-boost_parallel_mpi-1.71.0-2.1.noarch
+[   39s] libboost_container-devel-1.71.0-2.1.noarch
+[   39s] libboost_system-devel-1.71.0-2.1.noarch
+[   39s] libboost_filesystem-devel-1.71.0-2.1.noarch
+[   39s] boost-jam-1.71.0-2.1.noarch
+[   39s] libboost_stacktrace-devel-1.71.0-2.1.noarch
+[   39s] libboost_type_erasure-devel-1.71.0-2.1.noarch
+[   39s] libboost_locale-devel-1.71.0-2.1.noarch
+[   39s] libboost_context-devel-1.71.0-2.1.noarch
+[   39s] libboost_numpy3-devel-1.71.0-2.1.noarch
+[   39s] libboost_serialization-devel-1.71.0-2.1.noarch
+[   39s] libboost_math-devel-1.71.0-2.1.noarch
+[   39s] libboost_coroutine-devel-1.71.0-2.1.noarch
+[   39s] boost-devel-1.71.0-2.1.noarch
+[   39s] libboost_regex-devel-1.71.0-2.1.noarch
+[   39s] libboost_random-devel-1.71.0-2.1.noarch
+[   39s] libboost_mpi-devel-1.71.0-2.1.noarch
+[   39s] ... running 50-check-binary-kernel-log
+[   39s] ... running 50-check-core-files
+[   39s] ... checking for core files
+[   39s] ... running 50-check-debuginfo
+[   39s] ... testing for empty debuginfo packages
+[   39s] ... running 50-check-filelist
+[   39s] ... checking filelist
+[   40s] ... running 50-check-gconf-scriptlets
+[   40s] ... testing GConf scriptlet presence
+[   40s] ... running 50-check-installtest
+[   40s] ... testing for pre/postinstall scripts that are not idempotent
+[   42s] ... running 50-check-invalid-provides
+[   42s] ... running 50-check-invalid-requires
+[   43s] ... running 50-check-kernel-build-id
+[   43s] ... running 50-check-lanana
+[   43s] ... running 50-check-libtool-deps
+[   43s] ... testing devel dependencies required by libtool .la files
+[   43s]     (can be skipped by "skip-check-libtool-deps" anywhere in spec)
+[   43s] ... running 50-check-packaged-twice
+[   43s] ... running 50-check-permissions
+[   43s] ... testing for modified permissions
+[   45s] ... running 99-check-remove-rpms
+[   45s] ... removing all built rpms
+[   46s]     (order: reverse libboost_mpi-devel libboost_random-devel libboost_regex-devel boost-devel libboost_coroutine-devel libboost_math-devel libboost_serialization-devel libboost_numpy3-devel libboost_context-devel libboost_locale-devel libboost_type_erasure-devel libboost_stacktrace-devel boost-jam libboost_filesystem-devel libboost_system-devel libboost_container-devel python3-boost_parallel_mpi libboost_python3-devel libboost_fiber-devel libboost_headers-devel libboost_date_time-devel libboost_graph-devel libboost_thread-devel libboost_atomic-devel libboost_log-devel libboost_program_options-devel libboost_mpi_python3-devel libboost_timer-devel libboost_iostreams-devel libboost_graph_parallel-devel libboost_contract-devel libboost_test-devel libboost_wave-devel libboost_chrono-devel)
+[   46s] 
+[   46s] RPMLINT report:
+[   46s] ===============
+[   47s] 35 packages and 0 specfiles checked; 0 errors, 0 warnings.
+[   47s] 
+[   47s] ... creating baselibs
+[   48s] ... comparing built packages with the former built
+[   48s] /usr/lib/build/pkg-diff.sh
+[   48s] different number of subpackages
+[   48s] warning: /.build.oldpackages/libboost_regex-devel-1.71.0-1.1.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID 3dbdc284: NOKEY
+[   48s] --- /tmp/tmp.DzPPWcSVxx	2020-04-19 20:39:31.896000000 +0000
+[   48s] +++ /tmp/tmp.hEq7xVm6sY	2020-04-19 20:39:31.916000000 +0000
+[   48s] @@ -18,12 +18,9 @@
+[   48s]  libboost_log-devel
+[   48s]  libboost_math-devel
+[   48s]  libboost_mpi-devel
+[   48s] -libboost_mpi_python-devel
+[   48s]  libboost_mpi_python3-devel
+[   48s] -libboost_numpy-devel
+[   48s]  libboost_numpy3-devel
+[   48s]  libboost_program_options-devel
+[   48s] -libboost_python-devel
+[   48s]  libboost_python3-devel
+[   48s]  libboost_random-devel
+[   48s]  libboost_regex-devel
+[   48s] @@ -35,5 +32,4 @@
+[   48s]  libboost_timer-devel
+[   48s]  libboost_type_erasure-devel
+[   48s]  libboost_wave-devel
+[   48s] -python-boost_parallel_mpi
+[   48s]  python3-boost_parallel_mpi
+[   48s] ... saving statistics
+[   48s] ... saving built packages
+[   48s] RPMS/noarch/libboost_mpi-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_random-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_regex-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/boost-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_coroutine-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_math-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_serialization-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_numpy3-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_context-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_locale-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_type_erasure-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_stacktrace-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/boost-jam-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_filesystem-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_system-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_container-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/python3-boost_parallel_mpi-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_python3-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_fiber-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_headers-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_date_time-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_graph-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_thread-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_atomic-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_log-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_program_options-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_mpi_python3-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_timer-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_iostreams-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_graph_parallel-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_contract-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_test-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_wave-devel-1.71.0-2.1.noarch.rpm
+[   48s] RPMS/noarch/libboost_chrono-devel-1.71.0-2.1.noarch.rpm
+[   48s] SRPMS/boost-defaults-1.71.0-2.1.src.rpm
+[   48s] OTHER/_statistics
+[   48s] OTHER/rpmlint.log
+[   48s] 
+[   48s] lamb55 finished "build boost-defaults.spec" at Sun Apr 19 20:39:31 UTC 2020.
+[   48s] 
+[   48s] ### VM INTERACTION START ###
+[   51s] [   44.353961] sysrq: Power Off
+[   51s] [   44.361420] reboot: Power down
+[   51s] ### VM INTERACTION END ###
+[   51s] build: extracting built packages...
+[   51s] RPMS/noarch/libboost_mpi-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_random-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_regex-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/boost-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_coroutine-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_math-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_serialization-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_numpy3-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_context-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_locale-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_type_erasure-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_stacktrace-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/boost-jam-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_filesystem-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_system-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_container-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/python3-boost_parallel_mpi-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_python3-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_fiber-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_headers-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_date_time-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_graph-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_thread-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_atomic-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_log-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_program_options-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_mpi_python3-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_timer-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_iostreams-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_graph_parallel-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_contract-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_test-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_wave-devel-1.71.0-2.1.noarch.rpm
+[   51s] RPMS/noarch/libboost_chrono-devel-1.71.0-2.1.noarch.rpm
+[   51s] SRPMS/boost-defaults-1.71.0-2.1.src.rpm
+[   51s] OTHER/_statistics
+[   51s] OTHER/rpmlint.log
+
+Retried build at Sat May 30 09:21:10 2020 returned same result, skipped
+
+Retried build at Sat May 30 12:04:20 2020 returned same result, skipped
+
+Retried build at Sat May 30 17:21:06 2020 returned same result, skipped
