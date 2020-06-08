@@ -1,0 +1,2 @@
+https://build.opensuse.org/package/show/openSUSE:Factory/boost
+https://build.opensuse.org/public/build/openSUSE:Factory/standard/x86_64/boost:base/_log
